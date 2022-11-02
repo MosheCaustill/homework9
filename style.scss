@@ -1,0 +1,76 @@
+$bodyBG: rgb(71, 63, 63);
+$formBG: rgb(95, 95, 200);
+$textColor: white;
+$h1BG: blue;
+$lftMarg: 3%;
+$bottomMarg:2%;
+$btnColor: rgb(152, 100, 108);
+$fontWeight:100;
+$heights:40px;
+$radius:10px;
+$formfontSize:20px;
+$badcolor:red;
+$goodcolor:green;
+$font:arial;
+body {
+  background-color: $bodyBG;
+  .formdiv {
+    background-color: $formBG;
+    width: 470px;
+    margin: auto;
+    padding-bottom: $bottomMarg;
+    color: $textColor;
+    font-family: $font;
+    h1 {
+      text-align: center;
+      background-color: $h1BG;
+      padding: 4%;
+      font-weight: $fontWeight;
+      font-size: 30px;
+    }
+    label {
+        margin-left: $lftMarg;
+        font-size: $formfontSize;
+    }
+    input {
+        width: 94%;
+        margin-left: $lftMarg;
+        margin-bottom: $bottomMarg;
+        margin-top: 1%;
+        border-radius: $radius;
+        height: $heights;
+        border-style: none;
+    }
+    .btndiv {
+        margin-left: $lftMarg;
+        button {
+            height: $heights;
+            width: 150px;
+            margin-top: 10px;
+            color: $textColor;
+            border-style: none;
+            border-radius: $radius;
+            font-size: $formfontSize;
+            font-weight: $fontWeight;
+            margin-bottom: $bottomMarg;
+            background-color: $btnColor;
+        }
+    }
+    @mixin statusColor($statuscolor: red) {
+        margin-left: $lftMarg;
+        margin-right: $lftMarg;
+        margin-bottom: $bottomMarg;
+        height: $heights;
+        font-size: $formfontSize;
+        height: $heights;
+        background-color: $statuscolor;
+
+    }
+    .badDiv {
+        @include statusColor($statuscolor: $badcolor);
+    }
+    .goodDiv {
+        @include statusColor($statuscolor: $goodcolor);
+    }
+  }
+}
